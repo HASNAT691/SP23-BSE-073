@@ -1,0 +1,191 @@
+
+.navbar{
+ 
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav1{
+    flex: 1;
+    text-align: left;
+    padding: 100px 20px 5px 5px;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+    
+}
+
+input{
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 3px;
+    width: 600px;
+}
+button{
+    background-color: lightblue;
+    border: 1px;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 3px;
+}
+.nav3{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.nav4{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.nav-h2{
+    margin-left: 50px;
+    
+}
+/* Footer Styles */
+
+footer {
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 60px 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: #4CAF50;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Contact Information */
+.contact-info p, .contact-info a {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #fff;
+}
+
+.contact-info a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Quick Links */
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links ul li {
+    margin-bottom: 10px;
+}
+
+.quick-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Social Media */
+.social-media .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Newsletter */
+.newsletter form {
+    display: flex;
+    align-items: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.newsletter button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid #4CAF50;
+    padding-top: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+}
+
+.footer-bottom a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .newsletter input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .newsletter button {
+        width: 100%;
+    }
+}
+
+
