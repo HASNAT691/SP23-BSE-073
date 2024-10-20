@@ -44,10 +44,17 @@ button{
     display: flex;
     justify-content: space-around;
     margin: 20px;
+    text-align: center;
 }
 .nav-h2{
     margin-left: 50px;
     
+}
+
+.nav5{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 /* Footer Styles */
 
