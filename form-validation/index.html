@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Validation</title>
+
+    <script>
+      function validateForm(){
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var address = document.getElementById("address").value;
+        var city = document.getElementById("city").value;
+
+        if (name == ""){
+          alert("Name must be filled");
+          return false;
+        }
+
+        if (email == ""){
+          alert("Email must be filled");
+          return false;
+        }
+
+        if (address == ""){
+          alert("Address must be filled");
+          return false;
+        }
+        if (city == ""){
+          alert("City must be filled");
+          return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+      
+      }
+    </script>
+   
+  </head>
+  <body>
+    <h2>Form Validation</h2>
+    <form name="formvalidation" onsubmit="return validateForm()">
+      Name : <input type="text" id="name"> <br><br>
+      Email : <input type="text" name="email" id="email"><br><br>
+      Address : <textarea name="address" id="address"></textarea><br><br>
+      City : <input type="text" name="city" id="city"><br><br>
+      <button type="submit">submit</button>
+
+    </form>
+    
+  </body>
+</html>
