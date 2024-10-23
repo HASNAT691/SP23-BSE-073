@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="hk background.jpeg" alt="Profile Picture" class="profile-img"> <!-- Profile Image -->
+        <h1>Academic Portfolio</h1>
+        <p>A showcase of my academic journey and projects</p>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>A professional web developer profile summary is a significant part of becoming a great web coder 
+            because the client's trust largely depends on this. Not every web developer can be entrusted with 
+            the profile summary they provide. Freelancers, to some extent, put some unusual and useless words 
+            which shatters their career instantly. The web design process involves creating a site's 
+            architecture, designing its layout and user interface, and coding it to work correctly. 
+            Web development is the building and maintenance of websites; it's the work that happens behind the 
+            scenes to make a website look great, work fast, and perform well with a seamless user experience. Web 
+            developers, or 'devs', do this by using a variety of coding languages.</p>
+        </section>
+
+        <!-- Semester 1 -->
+        <section class="semester-section">
+            <h2 class="semester-title">Semester 1 Projects</h2>
+            <div class="projects-grid">
+    
+                <div class="project-card">
+                    <img src="pic1.jpg" alt="Task Manager" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Task Manager</h3>
+                        <p class="project-summary">A full-stack task management application with user authentication and real-time updates.</p>
+                        <button class="show-description-btn" data-project="project2">Show Description</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Semester 2 -->
+        <section class="semester-section">
+            <h2 class="semester-title">Semester 2 Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="bg1.jpg" alt="E-commerce Platform" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-summary">A scalable e-commerce platform with payment integration and inventory management.</p>
+                        <button class="show-description-btn" data-project="project3">Show Description</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Semester 3 -->
+        <section class="semester-section">
+            <h2 class="semester-title">Semester 3 Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="books.jpg" alt="Library Management System" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Library Management System</h3>
+                        <p class="project-summary">A comprehensive system for managing library operations including book lending, cataloging, and member management.</p>
+                        <button class="show-description-btn" data-project="project5">Show Description</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Project Description -->
+    <div class="modal" id="descriptionModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section as Footer -->
+    <footer>
+        <p><h3>Contact Us:</h3> <h4>Phone:</h4> 03457139939 <br>
+             <h4>Email:</h4> hasnat691atc@gmail.com</p>
+    </footer>
+
+   <script src="script.js"></script>
+</body>
+</html>
