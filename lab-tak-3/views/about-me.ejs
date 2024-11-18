@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #2c3e50, #42a0df);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem auto;
+    display: block;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-me {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.semester-section {
+    margin-bottom: 3rem;
+}
+
+.semester-title {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.project-summary {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.show-description-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-description-btn:hover {
+    background-color: #2980b9;
+}
+
+.project-description {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+    <header>
+        <img src="../public/images/hk background.jpeg" alt="Profile Picture" class="profile-img"> <!-- Profile Image -->
+        <h1>Academic Portfolio</h1>
+        <p>A showcase of my academic journey and projects</p>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>A professional web developer profile summary is a significant part of becoming a great web coder 
+            because the client's trust largely depends on this. Not every web developer can be entrusted with 
+            the profile summary they provide. Freelancers, to some extent, put some unusual and useless words 
+            which shatters their career instantly. The web design process involves creating a site's 
+            architecture, designing its layout and user interface, and coding it to work correctly. 
+            Web development is the building and maintenance of websites; it's the work that happens behind the 
+            scenes to make a website look great, work fast, and perform well with a seamless user experience. Web 
+            developers, or 'devs', do this by using a variety of coding languages.</p>
+        </section>
+
+        <!-- Semester 1 -->
+        <section class="semester-section">
+            <h2 class="semester-title">Semester 1 Projects</h2>
+            <div class="projects-grid">
+    
+                <div class="project-card">
+                    <img src="../public/images/pic1.jpg" alt="Task Manager" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Task Manager</h3>
+                        <p class="project-summary">A full-stack task management application with user authentication and real-time updates.</p>
+                        <button class="show-description-btn" data-project="project2">Show Description</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Semester 2 -->
+        <section class="semester-section">
+            <h2 class="semester-title">Semester 2 Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="bg1.jpg" alt="E-commerce Platform" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-summary">A scalable e-commerce platform with payment integration and inventory management.</p>
+                        <button class="show-description-btn" data-project="project3">Show Description</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Semester 3 -->
+        <section class="semester-section">
+            <h2 class="semester-title">Semester 3 Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="books.jpg" alt="Library Management System" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Library Management System</h3>
+                        <p class="project-summary">A comprehensive system for managing library operations including book lending, cataloging, and member management.</p>
+                        <button class="show-description-btn" data-project="project5">Show Description</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Project Description -->
+    <div class="modal" id="descriptionModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section as Footer -->
+    <footer>
+        <p><h3>Contact Us:</h3> <h4>Phone:</h4> 03457139939 <br>
+             <h4>Email:</h4> hasnat691atc@gmail.com</p>
+    </footer>
+
+   <script>
+    
+// Project descriptions (simulating loading from external files)
+const projectDescriptions = {
+    project2: `
+        <h2>Task Manager</h2>
+        <p>A robust task management system designed for team collaboration. 
+        Features include:</p>
+        <ul>
+            <li>User authentication and role-based access control</li>
+            <li>Real-time updates using WebSocket technology</li>
+            <li>Task categorization and priority management</li>
+            <li>File attachment support</li>
+            <li>Email notifications for task updates</li>
+        </ul>
+        <p>Technologies used: MongoDB, Express.js, React, Node.js, Socket.io</p>
+    `,
+    project3: `
+        <h2>E-commerce Platform</h2>
+        <p>A full-featured e-commerce solution with modern architecture. 
+        Key implementations:</p>
+        <ul>
+            <li>Secure payment processing with Stripe integration</li>
+            <li>Real-time inventory management system</li>
+            <li>Customer review and rating system</li>
+            <li>Advanced product search and filtering</li>
+            <li>Admin dashboard for order management</li>
+        </ul>
+        <p>Technologies used: Next.js, PostgreSQL, TypeScript, AWS</p>
+    `,
+    project5: `
+        <h2>Library Management System</h2>
+        <p>The Library Management System is a complete solution to manage library resources and operations efficiently. 
+        Key features include:</p>
+        <ul>
+            <li>Cataloging of books, journals, and multimedia resources</li>
+            <li>Member registration and loan management</li>
+            <li>Real-time tracking of book availability</li>
+            <li>Automated due date reminders</li>
+            <li>Detailed reporting on library activities</li>
+        </ul>
+        <p>Technologies used: Java, MySQL, Spring Boot, Hibernate</p>
+    `
+};
+
+// Show modal with project description
+$('.show-description-btn').click(function() {
+    const projectId = $(this).data('project');
+    $('#modalContent').html(projectDescriptions[projectId]);
+    $('#descriptionModal').fadeIn();
+});
+
+// Close modal
+$('.close-modal').click(function() {
+    $('#descriptionModal').fadeOut();
+});
+
+// Close modal when clicking outside
+$(window).click(function(event) {
+    if (event.target == document.getElementById('descriptionModal')) {
+        $('#descriptionModal').fadeOut();
+    }
+});
+
+   </script>
+</body>
+</html>
