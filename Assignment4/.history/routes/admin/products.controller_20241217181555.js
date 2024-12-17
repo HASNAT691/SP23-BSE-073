@@ -28,11 +28,11 @@ router.post("/admin/createProducts", async (req, res) => {
 
 router.get("/admin/products", async(req, res) => {
   
-  let products = await Product.find();
+  let product = await Product.find();
  return res.render("admin/products", {
    layout: "adminlayout",
    pageTitle: "Manage Your Products",
-   products
+   product
  })
 }); 
 

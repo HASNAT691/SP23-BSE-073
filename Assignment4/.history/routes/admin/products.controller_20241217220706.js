@@ -19,20 +19,40 @@ router.post("/admin/createProducts", async (req, res) => {
   await product.save();
   res.redirect("/admin/products");
   
-  ///we will send data to model to save in database
-
-  // return res.send(newproduct);
-  //return res.render("admin/product-form", {layout: "adminlayout",pageTitle: "Manage Your Products", products,  }) 
 });
+
+///route for available products
+router.get("/admin/availableProducts/:page?", async (req, res) => {
+  let page = req.params.page;
+  page = page ? Number(page) : 1;
+  let pagesize = 3;
+  let totalRecords = await Product.countDocuments();
+  let totalPages = Math.ceil(totalRecords / pagesize);
+
+  let product = await Product.find()
+    .skip((page - 1) * pagesize)
+    .limit(pagesize);
+
+  res.render("admin/availableProducts", {
+    layout: "adminlayout",
+    pageTitle: "My Featured Products",
+    page,
+    pagesize,
+    totalRecords,
+    totalPages,
+    product
+  })
+  
+})
 
 
 router.get("/admin/products", async(req, res) => {
   
-  let products = await Product.find();
+  let product = await Product.find();
  return res.render("admin/products", {
    layout: "adminlayout",
    pageTitle: "Manage Your Products",
-   products
+   product
  })
 }); 
 

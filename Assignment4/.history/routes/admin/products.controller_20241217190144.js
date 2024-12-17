@@ -25,14 +25,39 @@ router.post("/admin/createProducts", async (req, res) => {
   //return res.render("admin/product-form", {layout: "adminlayout",pageTitle: "Manage Your Products", products,  }) 
 });
 
+///route for available products
+router.get("/admin/:page?" , async(req, res) => {
+  let page = req.params.page;
+  page = page? Number(page):1;
+  let pageSize = 3;
+  let totalRecords = await Product.countDocuments();
+  let totalPages = Math.ceil(totalRecords / pageSize);
+
+
+  let product = await Product.find()
+  .limit(pageSize)
+  .skip((page - 1 ) * pageSize);
+
+
+  res.render("admins_ejs_files/availableProducts" , {
+      layout: 'AdminParent',
+      title: "My Featured Products",
+      product,
+      page,
+      pageSize,
+      totalPages,
+      totalRecords,
+  });
+});
+
 
 router.get("/admin/products", async(req, res) => {
   
-  let products = await Product.find();
+  let product = await Product.find();
  return res.render("admin/products", {
    layout: "adminlayout",
    pageTitle: "Manage Your Products",
-   products
+   product
  })
 }); 
 

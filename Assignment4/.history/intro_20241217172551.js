@@ -7,25 +7,33 @@ server.use(expressLayouts);
 server.use(express.static("public"));
 server.use(express.urlencoded({ extended: true }));
 
+
 let adminProductsRouter = require("./routes/admin/products.controller");
 server.use(adminProductsRouter);
+let loginRouter = require("./routes/admin/login.router")
+server.use(loginRouter)
 
 server.get("/about-me", (req, res) => {
   return res.render("about-me");
 });
 server.get("/", (req, res) => {
-  return res.send(res.render("homepage"));
+  res.render("homepage");
 });
+
+
+
 server.listen(5000, () => {
   console.log(`Server Started at localhost:5000`);
 });
-// let connectionString = "mongodb://localhost:27017/webProject";
-const connectionString = 'mongodb://127.0.0.1:27017/webProject';
+let connectionString = "mongodb://127.0.0.1 :27017/users";
 
 mongoose.connect(connectionString)
+
   .then(() => {
     console.log("Database Connected");
   })
   .catch((err) => {
-    console.log("Database Connection Error");
+    console.log("Database Connection Error: " 
+    +err);
   });
+////mongodb://localhost:27017/users

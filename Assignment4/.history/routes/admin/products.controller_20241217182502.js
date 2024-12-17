@@ -25,14 +25,25 @@ router.post("/admin/createProducts", async (req, res) => {
   //return res.render("admin/product-form", {layout: "adminlayout",pageTitle: "Manage Your Products", products,  }) 
 });
 
+///route for available products
+router.get("/admin/availableProducts", async (req, res) => {
+  let page = await Product.find();
+  res.render("admin/availableProducts", {
+    layout: "adminlayout",
+    pageTitle: "Manage Your Products",
+    page
+  })
+  
+})
+
 
 router.get("/admin/products", async(req, res) => {
   
-  let products = await Product.find();
+  let product = await Product.find();
  return res.render("admin/products", {
    layout: "adminlayout",
    pageTitle: "Manage Your Products",
-   products
+   product
  })
 }); 
 

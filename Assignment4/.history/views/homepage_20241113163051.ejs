@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <img src="images/carrefour-logo.png" alt="Logo" class="img-fluid">
+                </div>
+
+                <div class="col-md-6">
+                    <form action="/search" method="GET" class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search for" aria-label="Search" name="query">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+
+                <div class="col-md-3 text-end">
+                    <ul class="list-unstyled d-flex align-items-center gap-3 mb-0">
+                        <li><a href="" class="text-dark"><i class="fa fa-location-dot"></i> Deliver to</a></li>
+                        <li><a href="" class="text-dark"><i class="fa fa-sign-in"></i> Login & Register</a></li>
+                        <li><a href="" class="text-dark"><i class="fa fa-shopping-cart"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">All Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Fresh Food</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Fruits & Vegetables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Grocery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Bakery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Beverages & Tea</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cleaning & Household</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link" style="background-color:red; color: aliceblue;">Check Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/fresh_food_banner_1.jpg" class="d-block w-100" alt="Fresh Food">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Hero_banner_Deli_and_Bakery_2.jpg" class="d-block w-100" alt="Bakery">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Electronic_Web_3.jpg" class="d-block w-100" alt="Electronics">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h2>Top Categories</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="images/Mango_Festival_1.jpg" alt="Mango Festival" class="img-fluid">
+                <h5 class="text-center">Mango Festival</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/it_s_big_deal_circle-2.jpg" alt="Big Deal" class="img-fluid">
+                <h5 class="text-center">It's A Big Deal</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/281022_uae_app_hp_icon_frozen_3.jpg" alt="Frozen Food" class="img-fluid">
+                <h5 class="text-center">Frozen Food</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/beverages.jpg" alt="Beverages" class="img-fluid">
+                <h5 class="text-center">Beverages</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/bakery.jpg" alt="Bakery" class="img-fluid">
+                <h5 class="text-center">Bakery</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/rice,pasta.jpg" alt="Rice, Pasta & Pulses" class="img-fluid">
+                <h5 class="text-center">Rice, Pasta & Pulses</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h2>Best selling Products</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="images/promotional-deals.jpg" alt="Promotion Deal" class="img-fluid">
+                <h5 class="text-center">Promotion Deal</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/best-seller.jpg" alt="Best Seller" class="img-fluid">
+                <h5 class="text-center">Best Seller</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/lowest-price.jpg" alt="Lowest Price" class="img-fluid">
+                <h5 class="text-center">Lowest Price</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/coupon-code.jpg" alt="Coupon Code" class="img-fluid">
+                <h5 class="text-center">Coupon Code</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/fruits&veg.jpg" alt="Fruits & Vegetables" class="img-fluid">
+                <h5 class="text-center">Fruits & Vegetables</h5>
+            </div>
+            <div class="col-md-2">
+                <img src="images/dairy&egg.jpg" alt="Dairy & Eggs" class="img-fluid">
+                <h5 class="text-center">Dairy & Eggs</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+       
+        <div class="row">
+            <nav class="col-12">
+                <img src="images/flash-sale2.jpg" alt="Flash Sale" class="img-fluid w-100" style="max-height: 200px;">
+            </nav>
+        </div>
+    
+        <div class="row text-center my-4">
+            <nav>
+                <h2>Fresh Fruits & Vegetables</h2>
+            </nav>
+        </div>
+    
+        
+        <div class="row text-center">
+            
+            <div class="col-6 col-md-4 col-lg-2 mb-4">
+                <div class="img2">
+                    <img src="images/tomato.jpg" alt="Tomato" class="img-fluid" style="max-width: 125px;">
+                    <h5 class="mt-2">Tomato</h5>
+                </div>
+            </div>
+    
+            <div class="col-6 col-md-4 col-lg-2 mb-4">
+                <div class="img2">
+                    <img src="images/eggplant-long.jpg" alt="Eggplant Long" class="img-fluid" style="max-width: 125px;">
+                    <h5 class="mt-2">Eggplant Long</h5>
+                </div>
+            </div>
+    
+            <div class="col-6 col-md-4 col-lg-2 mb-4">
+                <div class="img2">
+                    <img src="images/fresh-methi.avif" alt="Fresh Methi" class="img-fluid" style="max-width: 125px;">
+                    <h5 class="mt-2">Fresh Methi</h5>
+                </div>
+            </div>
+    
+            <div class="col-6 col-md-4 col-lg-2 mb-4">
+                <div class="img2">
+                    <img src="images/long-cabbage.jpg" alt="Long Cabbage" class="img-fluid" style="max-width: 125px;">
+                    <h5 class="mt-2">Long Cabbage</h5>
+                </div>
+            </div>
+    
+           
+            <div class="col-6 col-md-4 col-lg-2 mb-4">
+                <div class="img2">
+                    <img src="images/fruits&veg.jpg" alt="Fruits & Vegetables" class="img-fluid" style="max-width: 125px;">
+                    <h5 class="mt-2">Fruits & Vegetables</h5>
+                </div>
+            </div>
+    
+          
+            <div class="col-6 col-md-4 col-lg-2 mb-4">
+                <div class="img2">
+                    <img src="images/dairy&egg.jpg" alt="Dairy & Eggs" class="img-fluid" style="max-width: 125px;">
+                    <h5 class="mt-2">Dairy & Eggs</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <p>123 Fresh Market St<br>Grocery City, GC 12345</p>
+                    <p>Email: <a href="mailto:info@carrefour.com" class="text-light">info@carrefour.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890" class="text-light">+1 (234) 567-890</a></p>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/about-us" class="text-light">About Us</a></li>
+                        <li><a href="/products" class="text-light">Shop</a></li>
+                        <li><a href="/blog" class="text-light">Blog</a></li>
+                        <li><a href="/contact-us" class="text-light">Contact Us</a></li>
+                        <li><a href="/faqs" class="text-light">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook text-light fs-4 me-3"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter text-light fs-4 me-3"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram text-light fs-4"></i></a>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Newsletter</h5>
+                    <form action="/subscribe" method="post">
+                        <input type="email" class="form-control mb-2" name="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-outline-light w-100">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <p>&copy; 2024 Grocery Shop. All Rights Reserved.</p>
+            <p><a href="/privacy-policy" class="text-light">Privacy Policy</a> | <a href="/terms" class="text-light">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
