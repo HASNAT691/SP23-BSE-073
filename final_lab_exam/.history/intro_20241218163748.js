@@ -1,4 +1,5 @@
 const express = require("express");
+const router=express.Router();
 const mongoose = require("mongoose");
 const order =require('./models/order');
 var expressLayouts = require("express-ejs-layouts");
@@ -43,10 +44,6 @@ server.get("/", (req, res) => {
 //   res.cookie("cart",cart);
 //   return res.redirect("/cart");
 // })
-
-
-// Routes
-server.use(order);
 
 
 

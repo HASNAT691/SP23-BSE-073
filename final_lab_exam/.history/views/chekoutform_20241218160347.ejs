@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="checkout-form" style="display: none;">
+        <h2>Delivery Address</h2>
+        <form id="delivery-form">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="street">Street</label>
+            <input type="text" id="street" name="street" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="postalCode">postal Code</label>
+            <input type="text" id="postalCode" name="postalCode" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("checkout-button").addEventListener('click', () => {
+            document.getElementById('checkout-form').style.display = 'block';
+        });
+
+        ///validation of input fields
+        document.getElementById('delivery-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const street = document.getElementById('street').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const postalCode = document.getElementById('postalCode').value.trim();
+
+            if (!name || !street || !city || !postalCode) {
+                alert('All fields are required.');
+                return;
+            }
+
+            //gather order detail
+            const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            const orderTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+            const orderDetails = {
+                customer: { name, street, city, postalCode },
+                items: cartItems,
+                total: orderTotal,
+                date: new Date().toISOString(),
+            };
+
+            //send to server
+            try {
+                const response = await fetch('/api/orders', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderDetails),
+                });
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert ('order placed successfully.');
+                    localStorage.removeItem('cartItems');
+                } else{
+                    alert ('failed to place order. Try again. ');
+                }
+            } catch (error){
+                console.error('error: ' , error);
+                alert('an error occured. try again');
+            }
+}
+        );
+
+
+    </script>
+</body>
+
+</html>

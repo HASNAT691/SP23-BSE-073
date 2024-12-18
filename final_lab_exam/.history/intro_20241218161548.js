@@ -1,6 +1,7 @@
 const express = require("express");
+const router=express.Router();
 const mongoose = require("mongoose");
-const order =require('./models/order');
+const order =require('../models/order');
 var expressLayouts = require("express-ejs-layouts");
 let server = express();
 server.set("view engine", "ejs");
@@ -44,10 +45,25 @@ server.get("/", (req, res) => {
 //   return res.redirect("/cart");
 // })
 
+router.post('/orders', async (req, res)=>{
+  try{
+    const {customer,items,total,date} =req.body;
 
-// Routes
-server.use(order);
+    if(!customer||!items||total==null){
+      return res.status(400).json({message: 'invalid order data'});
 
+    }
+
+    const newOrder = new order({customer,items,total,date});
+    await newOrder.save();
+    return res.status(201).json({message:'order placed successfully', order: newOrder});
+  } catch (error){
+    console.error(error);
+    res.status(500).json({message:'server error'});
+  }
+});
+
+module.exports=router;
 
 
 

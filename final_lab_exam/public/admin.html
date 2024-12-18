@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Orders</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <h2>Orders List</h2>
+    </header>
+
+    <main>
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Address</th>
+                    <th>Total Amount</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Orders will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        async function fetchOrders() {
+            const response = await fetch('/api/orders');
+            const orders = await response.json();
+
+            const tableBody = document.querySelector('#ordersTable tbody');
+            tableBody.innerHTML = '';
+
+            orders.forEach((order) => {
+                const row = `
+                    <tr>
+                        <td>${order.orderId}</td>
+                        <td>${order.customerName}</td>
+                        <td>${order.address}</td>
+                        <td>${order.totalAmount}</td>
+                        <td>${new Date(order.orderDate).toLocaleString()}</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Fetch and display orders when the page loads
+        fetchOrders();
+    </script>
+</body>
+</html>

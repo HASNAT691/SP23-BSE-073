@@ -45,10 +45,6 @@ server.get("/", (req, res) => {
 // })
 
 
-// Routes
-server.use(order);
-
-
 
 
 server.listen(5000, () => {
