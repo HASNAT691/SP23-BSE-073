@@ -1,0 +1,21 @@
+<div class="container">
+    <h4>Products in Cart</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product => { %>
+             <tr>
+                 <td><h1><%= product.title %></h1></td>
+                 <td><p><%= product.description %></p></td>
+                 <td><h3><%= product.price %></h3></td>
+             </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

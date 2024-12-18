@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Product Form</h2>
+    <form method="post" action="">
+     
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
+      </div>
+
+      <!-- Price -->
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Enter Price">
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter Description"></textarea>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="form-group d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Add Product</button>
+        
+      </div>
+    </form>
+  </div>
+
+  
+</body>
+</html>

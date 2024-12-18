@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Header</title>
+    <style>
+        /* General reset for better consistency */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header menu styles */
+        #menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color:white;
+            overflow: hidden;
+        }
+
+        /* Individual menu item styles */
+        #menu li {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Link styles */
+        #menu li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover effects */
+        #menu li a:hover {
+            background-color: #575757;
+            color: #f1f1f1;
+        }
+
+        /* Active menu item styles */
+        #menu li a:active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about-me">About Me</a></li>
+        <li><a href="/contact-us">Contact Us</a></li>
+        <li><a href="/admin_login">Admin Panel</a></li>
+    </ul>
+</body>
+</html>
